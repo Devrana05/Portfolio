@@ -136,7 +136,7 @@ const Hero = () => {
       {/* Sunglasses emoji circle */}
       <div className="absolute top-[18%] lg:top-[26%] right-[5%] lg:right-[15%] max-md:!top-[28%] max-md:!right-[15%] max-md:scale-50 max-md:opacity-90 animate-fade-up delay-600 mobile-fill-both">
         <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gray-800 rounded-full flex items-center justify-center text-xl lg:text-3xl shadow-lg transform rotate-12">
-          😎
+          <span className="text-accentOrange font-mono font-bold tracking-[-0.15em] pr-[0.15em]">&lt;/&gt;</span>
         </div>
       </div>
 
