@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path 
+    fill="#ffffff" 
+    fill-rule="evenodd" 
+    d="
+      M 50 2 
+      L 91.57 26 
+      L 91.57 74 
+      L 50 98 
+      L 8.43 74 
+      L 8.43 26 
+      Z
+      M 82.655 32.5 
+      A 35 35 0 1 0 82.655 67.5 
+      L 67.935 59 
+      A 18 18 0 1 1 67.935 41 
+      Z
+    " 
+  />
+</svg>

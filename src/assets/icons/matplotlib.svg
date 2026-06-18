@@ -1,0 +1,25 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#ffffff" stroke-width="2" />
+
+  <!-- Wedge 1: Top-left -->
+  <path d="M 50 50 L 15.6 21.1 A 45 45 0 0 1 57.8 5.7 Z" fill="#ffffff" />
+
+  <!-- Wedge 2: Top-right -->
+  <path d="M 50 50 L 66 15.6 A 38 38 0 0 1 79 25.6 Z" fill="#ffffff" />
+
+  <!-- Wedge 3: Right -->
+  <path d="M 50 50 L 64.7 47.4 A 15 15 0 0 1 64.7 52.6 Z" fill="#ffffff" />
+
+  <!-- Wedge 4: Bottom-right -->
+  <path d="M 50 50 L 84.4 74 A 42 42 0 0 1 71 86.3 Z" fill="#ffffff" />
+
+  <!-- Wedge 5: Bottom -->
+  <path d="M 50 50 L 56 84.4 A 35 35 0 0 1 44 84.4 Z" fill="#ffffff" />
+
+  <!-- Wedge 6: Bottom-left -->
+  <path d="M 50 50 L 30.9 66 A 25 25 0 0 1 27.4 60.5 Z" fill="#ffffff" />
+
+  <!-- Wedge 7: Left -->
+  <path d="M 50 50 L 6.6 61.6 A 45 45 0 0 1 13.2 24.2 Z" fill="#ffffff" />
+</svg>
