@@ -285,6 +285,8 @@ const FeaturedWorks = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTitleHovered, setIsTitleHovered] = useState(false);
   const [isDesktopInteraction, setIsDesktopInteraction] = useState(false);
+  const [projectType, setProjectType] = useState('minor');
+  const [typeTransitioning, setTypeTransitioning] = useState(false);
   
   useEffect(() => {
     const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
@@ -328,7 +330,7 @@ const FeaturedWorks = () => {
     if (distance < -50) handlePrev();
   };
 
-  const works = [
+  const minorWorks = [
     { 
       title: "Customer Segmentation", 
       subtitle: "Unsupervised K-Means clustering of customer behavior data",
@@ -347,6 +349,43 @@ const FeaturedWorks = () => {
       isTabbedProject: true
     },
   ];
+
+  const majorWorks = [
+    { 
+      title: "Text Summarizer", 
+      subtitle: "NLP-based abstractive text summarization using T5 transformer model with a FastAPI backend",
+      tools: "Python, PyTorch, T5, Transformers, FastAPI, Pandas",
+      image: "/major_1.png",
+      imageClassName: "w-[90%] h-[90%] object-contain rounded-xl",
+      repoLink: 'https://github.com/Devrana05/Text_Summarizer-App'
+    },
+    { 
+      title: "Major Project 2", 
+      subtitle: "Details coming soon...",
+      tools: "Tool 3, Tool 4",
+      image: "/project1_dark.png",
+      repoLink: '#'
+    }
+  ];
+
+  const works = projectType === 'minor' ? minorWorks : majorWorks;
+
+  const handleProjectTypeChange = (type) => {
+    if (type === projectType) return;
+    
+    setTypeTransitioning(true);
+    
+    setTimeout(() => {
+      setProjectType(type);
+      setCurrentIndex(0);
+      
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTypeTransitioning(false);
+        });
+      });
+    }, 250);
+  };
 
   const dlProjects = {
     fnn: {
@@ -416,12 +455,32 @@ const FeaturedWorks = () => {
     <RevealSection id="works" className="py-24 px-6 md:px-16 max-w-[1400px] mx-auto min-h-[600px] flex flex-col justify-center relative">
       <FloatingCube bottom="5%" left="5%" size="50px" color="#2a2a2a" rotation={-15} />
       
-      <h2 className="font-syne text-white text-4xl md:text-5xl font-bold mb-12 text-left w-full px-4 lg:px-8">
+      <h2 className="font-syne text-white text-4xl md:text-5xl font-bold mb-6 text-left w-full px-4 lg:px-8">
         Featured Works
       </h2>
 
-      {/* Mobile Grid View (Hidden on sm and up) */}
-      <div className="sm:hidden w-full relative z-10">
+      {/* Minor / Major Toggle */}
+      <div className="flex items-center gap-6 mb-12 px-4 lg:px-8">
+        <button 
+          onClick={() => handleProjectTypeChange('minor')}
+          className={`text-sm md:text-base font-bold tracking-widest transition-colors ${projectType === 'minor' ? 'text-accentOrange' : 'text-gray-500 hover:text-gray-300'}`}
+        >
+          MINOR
+        </button>
+        <span className="text-gray-600">|</span>
+        <button 
+          onClick={() => handleProjectTypeChange('major')}
+          className={`text-sm md:text-base font-bold tracking-widest transition-colors ${projectType === 'major' ? 'text-accentOrange' : 'text-gray-500 hover:text-gray-300'}`}
+        >
+          MAJOR
+        </button>
+      </div>
+
+      {/* Animated Wrapper for MINOR/MAJOR Switch */}
+      <div className={`transition-all duration-300 transform w-full relative z-10 flex flex-col ${typeTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        
+        {/* Mobile Grid View (Hidden on sm and up) */}
+        <div className="sm:hidden w-full relative z-10">
         <div className="grid grid-cols-1 gap-8">
           {works.map((work, idx) => {
             const displayData = work.isTabbedProject ? dlProjects[activeDlTab] : work;
@@ -512,7 +571,7 @@ const FeaturedWorks = () => {
                 <div className={`transition-all duration-150 transform min-h-[200px] xl:min-h-[220px] ${tabTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
                   {isDesktopInteraction ? (
                     <div 
-                      className="relative inline-block cursor-pointer mb-2"
+                      className="relative inline-block cursor-pointer mb-2 pr-10"
                       onMouseEnter={() => setIsTitleHovered(true)}
                       onMouseLeave={() => setIsTitleHovered(false)}
                       onClick={() => window.open(displayWork.repoLink, '_blank', 'noopener,noreferrer')}
@@ -563,6 +622,7 @@ const FeaturedWorks = () => {
                                 display: 'inline-flex',
                                 verticalAlign: 'middle',
                                 marginLeft: '8px',
+                                marginRight: '-32px',
                                 marginBottom: '4px',
                                 opacity: isTitleHovered ? 1 : 0,
                                 transform: isTitleHovered ? 'translateX(4px)' : 'translateX(-8px)',
@@ -663,6 +723,7 @@ const FeaturedWorks = () => {
               }`}
             />
           ))}
+        </div>
         </div>
       </div>
     </RevealSection>
