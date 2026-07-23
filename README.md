@@ -9,7 +9,7 @@ A personal portfolio website built with React and Vite, showcasing data science 
 
 ## 🚀 Live Demo
 
-[View Live Project](https://portfolio-devs-projects-5511845c.vercel.app)
+[View Live Project](https://portfolio-gray-five-28.vercel.app/)
 
 ## ✨ Features
 
