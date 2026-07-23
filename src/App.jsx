@@ -360,11 +360,12 @@ const FeaturedWorks = () => {
       repoLink: 'https://github.com/Devrana05/Text_Summarizer-App'
     },
     { 
-      title: "Major Project 2", 
-      subtitle: "Details coming soon...",
-      tools: "Tool 3, Tool 4",
-      image: "/project1_dark.png",
-      repoLink: '#'
+      title: "RD Concrete Co.", 
+      subtitle: "Business website for a precast concrete manufacturer",
+      tools: "Next.js, React, CSS, JavaScript, Responsive Design",
+      image: "/major_2.png",
+      imageClassName: "w-[90%] h-[90%] object-contain rounded-xl",
+      repoLink: 'https://rdccindia.com'
     }
   ];
 
