@@ -583,33 +583,6 @@ const FeaturedWorks = () => {
                           display: 'inline'
                         }}
                       >
-                        {displayWork.title === "Feedforward Neural Network" ? (
-                          <>
-                            <span style={outerUnderlineStyle}>
-                              <span style={innerTextStyle}>
-                                Feedforward
-                              </span>
-                            </span>
-                            <ArrowUpRight 
-                              size={22} 
-                              color="#E05A00" 
-                              style={{
-                                display: 'inline-flex',
-                                verticalAlign: 'middle',
-                                marginLeft: '8px',
-                                marginBottom: '4px',
-                                opacity: isTitleHovered ? 1 : 0,
-                                transform: isTitleHovered ? 'translateX(4px)' : 'translateX(-8px)',
-                                transition: isTitleHovered ? 'all 300ms ease 100ms' : 'all 200ms ease'
-                              }}
-                            />
-                            <span style={outerUnderlineStyle}>
-                              <span style={innerTextStyle}>
-                                {' '}Neural Network
-                              </span>
-                            </span>
-                          </>
-                        ) : (
                           <>
                             <span style={outerUnderlineStyle}>
                               <span style={innerTextStyle}>
@@ -631,7 +604,6 @@ const FeaturedWorks = () => {
                               }}
                             />
                           </>
-                        )}
                       </h3>
                     </div>
                   ) : (
@@ -903,7 +875,7 @@ const MySkills = () => {
         <div className="flex-1 w-full flex flex-col items-center">
           <div className="flex flex-col items-center mb-10">
             <h3 className="text-white text-3xl font-bold tracking-wide">Languages</h3>
-            <div className="w-24 h-1 bg-accentOrange mt-3"></div>
+            <div className="w-24 h-1 bg-accentOrange mt-3 rounded-full shadow-[0_0_10px_#E05A00]"></div>
           </div>
           <div className="grid grid-cols-2 gap-6 w-full max-w-[400px]">
             {languages.map(renderSkill)}
@@ -918,7 +890,7 @@ const MySkills = () => {
         <div className="flex-1 w-full flex flex-col items-center">
           <div className="flex flex-col items-center mb-10">
             <h3 className="text-white text-3xl font-bold tracking-wide">Frameworks</h3>
-            <div className="w-24 h-1 bg-accentOrange mt-3"></div>
+            <div className="w-24 h-1 bg-accentOrange mt-3 rounded-full shadow-[0_0_10px_#E05A00]"></div>
           </div>
           <div className="grid grid-cols-2 gap-6 w-full max-w-[400px]">
             {frameworks.map(renderSkill)}
