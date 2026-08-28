@@ -346,6 +346,34 @@ const FeaturedWorks = () => {
       repoLink: 'https://github.com/Devrana05/Supervised-Learning-Minor-Project'
     },
     { 
+      title: "RAG System", 
+      subtitle: "Retrieval-Augmented Generation architecture for intelligent document QA",
+      tools: "Python, LangChain, VectorDB, LLMs",
+      image: "/project1_dark.png",
+      repoLink: '#'
+    },
+    { 
+      title: "GAN Image Synthesizer", 
+      subtitle: "Generative Adversarial Network for creating realistic synthetic images",
+      tools: "Python, PyTorch, GANs, Computer Vision",
+      image: "/project1_dark.png",
+      repoLink: '#'
+    },
+    { 
+      title: "Flask Backend API", 
+      subtitle: "Robust RESTful web service and API architecture",
+      tools: "Python, Flask, SQLAlchemy, REST",
+      image: "/project1_dark.png",
+      repoLink: '#'
+    },
+    { 
+      title: "Agentic AI Workflow", 
+      subtitle: "Autonomous AI agents capable of complex reasoning and tool execution",
+      tools: "Python, LangGraph, OpenAI API, Agents",
+      image: "/project1_dark.png",
+      repoLink: '#'
+    },
+    { 
       isTabbedProject: true
     },
   ];
@@ -749,7 +777,11 @@ const MySkills = () => {
     { name: "Seaborn", icon: "seaborn", def: "A Python data visualization library based on matplotlib providing a high-level interface for statistical graphics." },
     { name: "Scikit-learn", icon: "scikitlearn", def: "A toolkit for teaching computers how to learn from data. It provides ready-to-use algorithms to find hidden patterns and make smart predictions." },
     { name: "GitHub", icon: "github", def: "A cloud-based platform for version control, allowing developers to track code securely." },
-    { name: "Git", icon: "git", def: "A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency." }
+    { name: "Git", icon: "git", def: "A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency." },
+    { name: "FastAPI", icon: "fastapi", def: "A modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints." },
+    { name: "Flask", icon: "flask", def: "A lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications." },
+    { name: "Streamlit", icon: "streamlit", def: "A free and open-source framework to rapidly build and share beautiful machine learning and data science web apps." },
+    { name: "Hugging Face", icon: "huggingface", def: "A powerful platform offering open-source machine learning tools and pre-trained models, specializing in natural language processing and transformer architectures." }
   ];
 
   const handleSkillClick = (skill, event) => {
@@ -869,7 +901,7 @@ const MySkills = () => {
       
       <h2 className="font-syne text-white text-4xl font-bold mb-16 text-center">My Skills</h2>
       
-      <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 w-full relative z-10 items-start justify-center max-w-5xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 w-full relative z-10 items-stretch justify-center max-w-5xl mx-auto">
         
         {/* Languages Section */}
         <div className="flex-1 w-full flex flex-col items-center">
@@ -883,7 +915,7 @@ const MySkills = () => {
         </div>
 
         {/* Separator Line */}
-        <div className="hidden lg:block w-[1px] min-h-full bg-gradient-to-b from-transparent via-[#555] to-transparent self-stretch"></div>
+        <div className="hidden lg:block w-[1px] bg-gradient-to-b from-transparent via-[#555] to-transparent"></div>
         <div className="block lg:hidden w-full h-[1px] max-w-[400px] mx-auto bg-gradient-to-r from-transparent via-[#555] to-transparent my-2"></div>
 
         {/* Frameworks Section */}
